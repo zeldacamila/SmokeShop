@@ -1,10 +1,14 @@
 @import './components/Nav/Nav.scss';
+@import './pages/NotFound/NotFound.scss';
+@import './pages/Home/Home.scss';
+@import './components/ProductsGroupCard/ProductsGroupCard.scss';
+@import './components/Button/Button.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Arial Narrow';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
