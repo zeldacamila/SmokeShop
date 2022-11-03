@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
   return (
     <div className='Nav-container'>
+      <div className='empty'></div>
       <div className='navLogo'>
         <img src='logo.png' alt='' />
         <h1> CannaDev </h1>
