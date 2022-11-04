@@ -1,4 +1,5 @@
 import React from 'react'
+import BrandsSlider from '../../components/BrandsSlider/Brands'
 import ProductsGroupCard from '../../components/ProductsGroupCard/ProductsGroupCard'
 
 const Home = () => {
@@ -51,7 +52,7 @@ const Home = () => {
       </div>
       <h1>NUESTRAS MARCAS ALIADAS</h1>
       <div className='Brands-container'>
-
+        <BrandsSlider />
       </div>
       <h1>VISITA NUESTRO BLOG</h1>
       <div className='Blog-container'>
