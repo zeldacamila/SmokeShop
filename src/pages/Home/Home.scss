@@ -9,7 +9,6 @@
     0 0 21px #fff,
     0 0 42px #81b852,
     0 0 82px #81b852,
-    0 0 92px #81b852;
   }
 }
 
@@ -19,7 +18,19 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-bottom: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 80px;
+}
+
+.Brands-container {
+  margin-top: 40px;
+  margin-bottom: 80px
+}
+
+.Blog-container {
+  margin-top: 40px;
+  margin-bottom: 80px
 }
 
 .advertising {
@@ -35,10 +46,10 @@
     0 0 42px #177333,
     0 0 82px #177333,
     0 0 92px #177333;
-      font-size: 22px;
-      font-family: 'Oswald', sans-serif;
-      background-color: #81b852;
-      display: flex;
-      justify-content: center;
-      align-items: center;  
+  font-size: 22px;
+  font-family: 'Oswald', sans-serif;
+  background-color: #81b852;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
 }
