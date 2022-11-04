@@ -2,10 +2,10 @@
 .Nav-container {
   padding: 0px;
   margin: 0px 0px 0px 0px;
-  height: 120px;
+  height: 100px;
   background-color: rgb(122, 122, 122);
   color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  //box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   display: flex;
   justify-content: space-between;
   .empty {
@@ -13,7 +13,7 @@
     height: 60px;
   }
   .navLogo {
-      height: 120px;
+      height: 95px;
       width: 240px;
       display: flex;
       flex-direction: column;

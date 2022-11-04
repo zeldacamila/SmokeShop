@@ -5,9 +5,7 @@ const Home = () => {
 
   return (
     <div className='Home-container'>
-      <div className='advertising-container'>
-        <p>Envíos gratis por compras superiores a 200.000 COP</p>
-      </div>
+      <p className='advertising'>Envíos gratis por compras superiores a 200.000 COP</p>
       <h1>¿QUÉ ESTÁS BUSCANDO?</h1>
       <div className='Cards-container'>
         <ProductsGroupCard 
@@ -44,12 +42,20 @@ const Home = () => {
           buttonPath='/' />
         <ProductsGroupCard 
           cardImage='medicinal.png'
-          buttonTitle='MEDICINAL'
+          buttonTitle='PRODUCTOS CBD'
           buttonPath='/' />
         <ProductsGroupCard 
           cardImage='kit.png'
           buttonTitle='KITS'
           buttonPath='/' />
+      </div>
+      <h1>NUESTRAS MARCAS ALIADAS</h1>
+      <div className='Brands-container'>
+
+      </div>
+      <h1>VISITA NUESTRO BLOG</h1>
+      <div className='Blog-container'>
+
       </div>
     </div>
   )
