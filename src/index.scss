@@ -1,0 +1,25 @@
+@import './App.scss';
+@import './components/Nav/Nav.scss';
+@import './pages/NotFound/NotFound.scss';
+@import './pages/Home/Home.scss';
+@import './components/ProductsGroupCard/ProductsGroupCard.scss';
+@import './components/Button/Button.scss';
+@import './components/BrandsSlider/Brands.scss';
+@import './components/Footer/Footer.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Oswald:wght@700&display=swap');
+
+@import '~antd/dist/antd.css';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Arial Narrow';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,20 @@
+.notfound-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 45px;
+  padding-bottom: 40px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  img {
+    width: 40%;
+    height: 40%;
+  }
+  p {
+    color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 90px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+}

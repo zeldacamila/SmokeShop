@@ -1,0 +1,13 @@
+
+
+.cardImg-container {
+  position: absolute;
+}
+.cardImg-container img.firstImage {
+  position: relative;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.cardImg-container img.secondImage:hover {
+  opacity: 0;
+}
