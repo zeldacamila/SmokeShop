@@ -56,43 +56,43 @@ const Home = () => {
         <ProductsGroupCard 
           cardImage='vapes.png'
           buttonTitle='VAPOS'
-          buttonPath='/' />
+          buttonPath='/collections/vapes' />
         <ProductsGroupCard 
           cardImage='bong.png'
           buttonTitle='BONGS'
-          buttonPath='/' />
+          buttonPath='/collections/bongs' />
         <ProductsGroupCard 
           cardImage='grinder.png'
           buttonTitle='GRINDERS'
-          buttonPath='/' />
+          buttonPath='/collections/grinders' />
         <ProductsGroupCard 
           cardImage='lighter.png'
           buttonTitle='CANDELAS'
-          buttonPath='/' />
+          buttonPath='/collections/lighters' />
         <ProductsGroupCard 
           cardImage='papers.png'
           buttonTitle="PA' ENROLAR"
-          buttonPath='/' />
+          buttonPath='/collections/papers' />
         <ProductsGroupCard 
           cardImage='pipe.png'
           buttonTitle='PIPAS'
-          buttonPath='/' />
+          buttonPath='/collections/pipes' />
         <ProductsGroupCard 
           cardImage='grow.png'
           buttonTitle='PARA TU CULTIVO'
-          buttonPath='/' />
+          buttonPath='/collections/growing' />
         <ProductsGroupCard 
           cardImage='accesorios.png'
           buttonTitle='ACCESORIOS'
-          buttonPath='/' />
+          buttonPath='/collections/accesories' />
         <ProductsGroupCard 
           cardImage='medicinal.png'
           buttonTitle='PRODUCTOS CBD'
-          buttonPath='/' />
+          buttonPath='/collections/medicinal' />
         <ProductsGroupCard 
           cardImage='kit.png'
-          buttonTitle='KITS'
-          buttonPath='/' />
+          buttonTitle='COMBOS'
+          buttonPath='/collections/kits' />
       </div>
       <h1>NUESTRAS MARCAS ALIADAS</h1>
       <div className='Brands-container'>

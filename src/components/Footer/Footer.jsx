@@ -3,11 +3,6 @@ import { FaRegCopyright } from "react-icons/fa";
 
 const Footer = () => {
 
-  const handleClickLinkedin = () => {
-    console.log('handleClick')
-    window.location('https://www.linkedin.com/in/mc-recuero')
-  }
-  
   return (
     <div className='Foot-container'>
       <div className='empty'>
@@ -20,8 +15,12 @@ const Footer = () => {
       <div className='footIcons'>
         <p> Visítanos </p>
         <button><img src='fblogo.png' alt='' /></button>
-        <button onClick={handleClickLinkedin}><img src='inlogo.png' alt='' /></button>
-        <button><img src='iglogo.png' alt='' /></button>
+        <a href='https://www.linkedin.com/in/mc-recuero' target="_blank" rel="noopener noreferrer" className='linkedinLink'>
+          <button><img src='inlogo.png' alt='' /></button>
+        </a>
+        <a href='https://www.instagram.com/cannadev_/' target="_blank" rel="noopener noreferrer" className='linkedinLink'>
+          <button><img src='iglogo.png' alt='' /></button>
+        </a>
       </div>
     </div>
   )
