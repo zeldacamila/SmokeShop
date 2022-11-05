@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductCard from '../../components/ProductsGroupCard/ProductsGroupCard'
-import { useState, useEffect, useParams } from 'react'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const ProductsByCollection = () => {

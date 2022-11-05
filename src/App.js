@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import NotFound from './pages/NotFound/NotFound';
 import Home from './pages/Home/Home';
 import Footer from './components/Footer/Footer';
-import ProductsByCollection from './pages/Vapos/Vapos';
+import ProductsByCollection from './pages/ProductsByCollection/ProductsByCollection';
 
 function App() {
   return (
