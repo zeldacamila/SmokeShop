@@ -1,4 +1,3 @@
-import './App.css';
 import Nav from './components/Nav/Nav';
 import {Routes, Route} from 'react-router-dom'
 import NotFound from './pages/NotFound/NotFound';

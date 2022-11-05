@@ -1,11 +1,10 @@
-
 .Nav-container {
   padding: 0px;
   margin: 0px 0px 0px 0px;
   height: 100px;
   background-color: #dfd4bc;
   color: #fff;
-  //box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   display: flex;
   justify-content: space-between;
   .empty {
@@ -13,16 +12,17 @@
     height: 60px;
   }
   .navLogo {
-      height: 95px;
+      height: 90px;
       width: 240px;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
+      align-self: center;
       align-items: center;
       justify-content: center;
       img {
-          width: 108px;
-          height: 108px;
+          width: 90px;
+          height: 90px;
           object-fit: contain;
       }
       h1 {
