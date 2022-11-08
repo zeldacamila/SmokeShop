@@ -8,6 +8,8 @@
 @import './components/Footer/Footer.scss';
 @import './components/Spiner/Spiner.scss';
 @import './pages/ProductsByCollection/ProductsByCollection.scss';
+@import './pages/Cart/Cart.scss';
+@import './pages/Profile/Profile.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Oswald:wght@700&display=swap');
@@ -25,3 +27,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
