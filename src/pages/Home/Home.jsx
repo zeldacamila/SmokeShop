@@ -3,6 +3,7 @@ import BrandsSlider from '../../components/BrandsSlider/Brands'
 import ProductsGroupCard from '../../components/ProductsGroupCard/ProductsGroupCard'
 import { Button, Modal } from 'antd'
 import { useState } from 'react'
+import 'animate.css'
 
 const Home = () => {
   const [open, setOpen] = useState(true);
@@ -51,7 +52,7 @@ const Home = () => {
         <p>{modalText}</p>
       </Modal>
       <p className='advertising'>Envíos gratis por compras superiores a 200.000 COP</p>
-      <h1>¿QUÉ ESTÁS BUSCANDO?</h1>
+      <h1 className='animate__animated animate__fadeInLeft'>¿QUÉ ESTÁS BUSCANDO?</h1>
       <div className='Cards-container'>
         <ProductsGroupCard 
           cardImage='vapes.png'
@@ -94,11 +95,11 @@ const Home = () => {
           buttonTitle='COMBOS'
           buttonPath='/collections/Combos' />
       </div>
-      <h1>NUESTRAS MARCAS ALIADAS</h1>
+      <h1 className='animate__animated animate__fadeInLeft'>NUESTRAS MARCAS ALIADAS</h1>
       <div className='Brands-container'>
         <BrandsSlider />
       </div>
-      <h1>VISITA NUESTRO BLOG</h1>
+      <h1 className='animate__animated animate__fadeInLeft'>VISITA NUESTRO BLOG</h1>
       <div className='Blog-container'>
 
       </div>
