@@ -13,9 +13,9 @@ const Nav = () => {
         <h1> CannaDev </h1>
       </div>
       <div className='navIcons'>
-        <button onClick={() => navigate('/blog')}><img src='blog.png' alt='' /></button>
-        <button onClick={() => navigate('/cart')}><img src='cart.png' alt='' /></button>
-        <button onClick={() => navigate('/profile')}><img src='profile.png' alt='' /></button>
+        <button className='buttonheader' onClick={() => navigate('/blog')}><img src='blog.png' alt='' /></button>
+        <button className='buttonheader' onClick={() => navigate('/cart')}><img src='cart.png' alt='' /></button>
+        <button className='buttonheader' onClick={() => navigate('/profile')}><img src='profile.png' alt='' /></button>
       </div>
     </div>
   )
