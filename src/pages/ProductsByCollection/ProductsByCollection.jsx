@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductCard from '../../components/ProductsGroupCard/ProductsGroupCard'
+import ProductCard from '../../components/ProductCard/ProductCard'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -9,16 +9,16 @@ const ProductsByCollection = () => {
   const [products, setProducts] = useState([])
   let collection = useParams();
 
-  console.log('collection de params:', collection.Collection)
+  console.log('collection de params:', collection.collection)
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_HEROKU_URL}/collections`
+    axios.get('http://localhost:8081/api/products'
     ).then((res) => {
       const allProducts = res.data.data
       console.log('allproducts:', allProducts)
     
       const productsByCollection = allProducts.filter(function (item) {
-        return item.collection === collection.Collection
+        return item.collectionName === collection.collection
       })
       console.log('productsByCollection', productsByCollection)
       
@@ -32,16 +32,16 @@ const ProductsByCollection = () => {
   return (
     <div className='productsByCollection-container'>
       <p className='advertising'>Envíos gratis por compras superiores a 200.000 COP</p>
-      <h1>{collection.Collection}</h1>
+      <h1>{collection.collection}</h1>
       <div className='CollectionProductsCards-container'>
         {(products.map((item) => {
           return(
             <ProductCard
               productImage1={item.productImage1}
               productImage2={item.productImage2}
-              collection={item.collection}
-              productName={item.productName}
-              productPrice={item.productPrice} />
+              collectionName={item.collectionName}
+              productName={item.name}
+              productPrice={item.price} />
           )}))}
       </div>
     </div>

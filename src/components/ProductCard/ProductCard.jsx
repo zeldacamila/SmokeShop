@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductCard = ({productImage1, productImage2, collection, productName, productPrice}) => {
+const ProductCard = ({productImage1, productImage2, collectionName, productName, productPrice}) => {
 
   const handleClickAddtoCart = () => {
 
@@ -8,14 +8,14 @@ const ProductCard = ({productImage1, productImage2, collection, productName, pro
 
   return (
     <div className='ProductCard-container'>
-      <a href={`collections/${collection}/${productName}`} className='linkProduct'>
+      <a href={`collections/${collectionName}/${productName}`} className='linkProduct'>
         <div className='withoutButtons-container'>
           <div className='productCardImg-container'>
             <img className='secondImage'src={productImage2} alt='' />
             <img className='firstImage' src={productImage1} alt='' />
           </div>
           <p className='productName'>{productName}</p>
-          <p className='productPrice'>{productPrice}</p>
+          <p className='productPrice'>COP${productPrice}</p>
         </div>
       </a>
       <div className='withButtons-container'>

@@ -56,43 +56,43 @@ const Home = () => {
         <ProductsGroupCard 
           cardImage='vapes.png'
           buttonTitle='VAPOS'
-          buttonPath='/collections/vapes' />
+          buttonPath='/collections/Vapos' />
         <ProductsGroupCard 
           cardImage='bong.png'
           buttonTitle='BONGS'
-          buttonPath='/collections/bongs' />
+          buttonPath='/collections/Bongs' />
         <ProductsGroupCard 
           cardImage='grinder.png'
           buttonTitle='GRINDERS'
-          buttonPath='/collections/grinders' />
+          buttonPath='/collections/Grinders' />
         <ProductsGroupCard 
           cardImage='lighter.png'
           buttonTitle='CANDELAS'
-          buttonPath='/collections/lighters' />
+          buttonPath='/collections/Candelas' />
         <ProductsGroupCard 
           cardImage='papers.png'
           buttonTitle="PA' ENROLAR"
-          buttonPath='/collections/papers' />
+          buttonPath="/collections/Pa' Enrolar" />
         <ProductsGroupCard 
           cardImage='pipe.png'
           buttonTitle='PIPAS'
-          buttonPath='/collections/pipes' />
+          buttonPath='/collections/Pipas' />
         <ProductsGroupCard 
           cardImage='grow.png'
           buttonTitle='PARA TU CULTIVO'
-          buttonPath='/collections/growing' />
+          buttonPath='/collections/Para tu cultivo' />
         <ProductsGroupCard 
           cardImage='accesorios.png'
           buttonTitle='ACCESORIOS'
-          buttonPath='/collections/accesories' />
+          buttonPath='/collections/Accesorios' />
         <ProductsGroupCard 
           cardImage='medicinal.png'
           buttonTitle='PRODUCTOS CBD'
-          buttonPath='/collections/medicinal' />
+          buttonPath='/collections/Productos CBD' />
         <ProductsGroupCard 
           cardImage='kit.png'
           buttonTitle='COMBOS'
-          buttonPath='/collections/kits' />
+          buttonPath='/collections/Combos' />
       </div>
       <h1>NUESTRAS MARCAS ALIADAS</h1>
       <div className='Brands-container'>

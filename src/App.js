@@ -4,6 +4,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Home from './pages/Home/Home';
 import Footer from './components/Footer/Footer';
 import ProductsByCollection from './pages/ProductsByCollection/ProductsByCollection';
+import Blog from './pages/Blog/Blog';
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='*' element={<NotFound />} />
-        <Route path="/collections/:Collection" element={<ProductsByCollection />} />
+        <Route path="/collections/:collection" element={<ProductsByCollection />} />
+        <Route path="/blog" element={<Blog />} />
+        {/*<Route path="/products/:productTitle" element={<ProductDetail />} />*/}
       </Routes>
       <Footer />
     </div>
