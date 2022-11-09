@@ -21,7 +21,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { userOrAdmin } = await axios.post(`${process.env.BACKEND_URL}/adminauth/signin`, user);
+      const { userOrAdmin } = await axios.post(`https://cannadev-smokeshop.herokuapp.com/adminauth/signin`, user);
       if (userOrAdmin) {
         dispatch({type: SETUSERDATA, payload: {userOrAdmin}})
         navigate('/')
@@ -30,7 +30,7 @@ const Profile = () => {
       console.error(error)
       if (error) {
         try {
-          const { data } = await axios.post(`${process.env.BACKEND_URL}/auth/signin`, user);
+          const { data } = await axios.post(`https://cannadev-smokeshop.herokuapp.com/auth/signin`, user);
           if (data) {
             dispatch({type: SETUSERDATA, payload: {data}})
             navigate('/')
