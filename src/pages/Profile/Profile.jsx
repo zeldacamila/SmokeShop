@@ -21,7 +21,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('http://localhost:8081/auth/signin', user);
+      const { data } = await axios.post(`${process.env.BACKEND_URL}/auth/signin`, user);
       if (data) {
         dispatch({type: SETUSERDATA, payload: {data}})
         navigate('/')

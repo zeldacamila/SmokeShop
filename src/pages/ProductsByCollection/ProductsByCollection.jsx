@@ -15,7 +15,7 @@ const ProductsByCollection = () => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get('http://localhost:8081/api/products'
+    axios.get(`${process.env.BACKEND_URL}/api/products`
     ).then((res) => {
       const allProducts = res.data.data
       console.log('allproducts:', allProducts)
