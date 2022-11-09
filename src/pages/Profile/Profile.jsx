@@ -21,17 +21,27 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(`${process.env.BACKEND_URL}/auth/signin`, user);
-      if (data) {
-        dispatch({type: SETUSERDATA, payload: {data}})
+      const { userOrAdmin } = await axios.post(`${process.env.BACKEND_URL}/adminauth/signin`, user);
+      if (userOrAdmin) {
+        dispatch({type: SETUSERDATA, payload: {userOrAdmin}})
         navigate('/')
-      }
+      } 
     } catch (error) {
-      console.log(error)
-      alert(`catch error: ${error.response.data}`)
+      console.error(error)
+      if (error) {
+        try {
+          const { data } = await axios.post(`${process.env.BACKEND_URL}/auth/signin`, user);
+          if (data) {
+            dispatch({type: SETUSERDATA, payload: {data}})
+            navigate('/')
+          }
+        } catch (error) {
+          console.error(error)
+        }
+      }
     }
-  };
-
+  }
+  
   return (
     <div className='Profile-container'>
       <p className='advertising'>Envíos gratis por compras superiores a 200.000 COP</p>
