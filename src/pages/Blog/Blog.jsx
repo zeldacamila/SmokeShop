@@ -11,7 +11,7 @@ const Blog = () => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get(`${process.env.BACKEND_URL}/api/publications`
+    axios.get(`http://localhost:8081/api/publications`
     ).then((res) => {
       const allPublications = res.data.data
       console.log('allPublications:', allPublications)  

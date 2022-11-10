@@ -4,32 +4,41 @@ import ProductsGroupCard from '../../components/ProductsGroupCard/ProductsGroupC
 import { Button, Modal } from 'antd'
 import { useState } from 'react'
 import 'animate.css'
+import Cookies from 'universal-cookie'
 
 const Home = () => {
+
   const [open, setOpen] = useState(true);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [modalText, setModalText] = useState('Para permitir tu ingreso a CannaDev verificaremos si eres mayor de edad. ¿Certificas que eres mayor de 18 años?');
+  const cookies = new Cookies()
+  const handleYes = () => {
+    cookies.set('modal', 'yes', {options: {path: '/', maxAge:60*60*24*30}})
+  }
+  console.log(cookies.get('modal'))
   const handleOk = ({okButtonProps}) => {
+    
     if (modalText === 'Lo sentimos, no puedes acceder a nuestro contenido si no eres mayor de edad.') {
       return (
         okButtonProps={disabled: true}
       )
     } else {
+      handleYes()
       setModalText('Accediendo a CannaDev...');
       setConfirmLoading(true);
       setTimeout(() => {
         setOpen(false);
         setConfirmLoading(false);
-      }, 1000);
+      }, 500);
       }
   };
   const handleCancel = () => {
     console.log('Clicked cancel button');
     setModalText('Lo sentimos, no puedes acceder a nuestro contenido si no eres mayor de edad.');
   };
-
   return (
     <div className='Home-container'>
+      { cookies.get('modal') === 'yes' ? <></> : (
       <Modal
         title='BIENVENIDO A CANNADEV'
         open={open}
@@ -50,7 +59,7 @@ const Home = () => {
         ]}
       >
         <p>{modalText}</p>
-      </Modal>
+      </Modal>)}   
       <p className='advertising'>Envíos gratis por compras superiores a 200.000 COP</p>
       <h1 className='animate__animated animate__fadeInLeft'>¿QUÉ ESTÁS BUSCANDO?</h1>
       <div className='Cards-container'>

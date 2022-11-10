@@ -9,9 +9,12 @@ const Nav = () => {
   console.log(storeState)
   return (
     <div className='Nav-container'>
-      <div className='empty'>
-        {storeState.userReducer.isLogged ? <h1>loggeado</h1> : <h1>no loggeado</h1>}
-      </div>
+      {storeState.userReducer.isAdmin ? 
+        <div className='empty'>
+          <p>Administrador</p>
+        </div>
+      :
+      <div className='empty'></div>}
       <div className='navLogo'>
         <button onClick={() => navigate('/')}><img src='logo.png' alt='' /></button>
         <h1> CannaDev </h1>
