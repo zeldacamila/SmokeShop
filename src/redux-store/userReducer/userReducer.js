@@ -4,6 +4,8 @@ export const CLOSEUSERSESION = "@user/closeSesion"
 const initialValues = {
   token: "",
   isLogged: false,
+  isAdmin: false,
+  name: ""
 };
 
 export const userReducer = (state=initialValues, action) => {
@@ -11,7 +13,9 @@ export const userReducer = (state=initialValues, action) => {
     case SETUSERDATA:
       return {
         ...state,
-        token: action.payload.data,
+        token: action.payload.data.token,
+        isAdmin: action.payload.data.isAdmin,
+        name: action.payload.data.name,
         isLogged: true
       };
     case CLOSEUSERSESION:

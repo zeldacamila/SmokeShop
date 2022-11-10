@@ -21,7 +21,9 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         {/*<Route path="/products/:productTitle" element={<ProductDetail />} />*/}
       </Routes>
-      <Footer />
+      <div className='foot'>
+        <Footer />
+      </div>
     </div>
   );
 }
