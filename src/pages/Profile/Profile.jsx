@@ -1,14 +1,10 @@
 import React from 'react'
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { useDispatch } from 'react-redux'
-import { SETUSERDATA } from "../../redux-store/userReducer/userReducer";
 import axios from "axios"
-import { store } from '../../redux-store/indexRedux'
 
 const Profile = () => {
 
-  const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const [email, setEmail] = useState('')
@@ -23,8 +19,11 @@ const Profile = () => {
     e.preventDefault();
       try {
         const { data } = await axios.post(`http://localhost:8081/auth/signin`, user);
+        console.log('data', data)
         if (data) {
-          dispatch({type: SETUSERDATA, payload: {data}})
+          localStorage.setItem('token', data.token)
+          localStorage.setItem('isAdmin', data.isAdmin)
+          localStorage.setItem('name', data.name)
           navigate('/')
         }
       } catch (error) {
@@ -32,12 +31,14 @@ const Profile = () => {
         }
   }
 
-  const storeState = store.getState()
-
+  const handleLogout = () => {
+    localStorage.clear()
+    navigate('/')
+  }
   return (
     <div className='Profile-container'>
       <p className='advertising'>Envíos gratis por compras superiores a 200.000 COP</p>
-      {!storeState.userReducer.isLogged ?
+      {!localStorage.getItem('token') ?
       (<>
         <h1 className='animate__animated animate__fadeInLeft'>Bienvenido</h1>
         <form className="login-form" onSubmit={handleSubmit}>
@@ -45,11 +46,43 @@ const Profile = () => {
           <input id="email" type="email" name="email" onChange={(e) => setEmail(e.target.value)} value={email} />
           <label htmlFor="password">Password</label>
           <input id="pass" type="password" name="password" onChange={(e) => setPassword(e.target.value)} value={password} />
-          <button>Login</button>
+          <button>Iniciar Sesión</button>
         </form>
+        <button className='singupButton-container' onClick={()=> navigate('/signup-profile')}>Crear una cuenta</button>
       </>)
       : 
-      <h1 className='animate__animated animate__fadeInLeft'>Bienvenido {storeState.userReducer.name}</h1>
+      <>
+        
+        <div className='adminOrUserOptions-container'>
+          {localStorage.getItem('isAdmin') === 'true' ?
+            (<>
+              <h1 className='animate__animated animate__fadeInLeft'>Bienvenido(a) {localStorage.getItem('name')}. Administra tu e-commerce</h1>
+              <div className='manageEcommerce-container'>
+                <div className='manageShop-container'>
+                  <div className='ManageEcommerceImg-container'>
+                    <img src='shop.png' alt='' />
+                  </div>
+                  <button className='manageShopButton' onClick={()=> navigate('/admin/manageProducts')}>⚙️ Tienda</button>
+                </div>
+                <div className='manageBlog-container'>
+                  <div className='ManageEcommerceImg-container'>
+                    <img src='blogconfig.png' alt='' />
+                  </div>
+                  <button className='manageBlogButton' onClick={()=> navigate('/admin/manageBlog')}>⚙️ Blog</button>
+                </div>
+              </div>
+              
+              
+              
+            </>)
+            :
+            (<>
+              <h1 className='animate__animated animate__fadeInLeft'>Bienvenido(a) {localStorage.getItem('name')}</h1>
+            </>)
+          }
+        </div>
+        <button className='logoutButton-container' onClick={handleLogout}>Cerrar sesión</button>
+      </>
       }
     </div>
   )
