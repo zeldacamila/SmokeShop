@@ -10,6 +10,8 @@ const UploadProduct = () => {
   const [productName, setProductName] = useState('')
   const [productCollection, setProductCollection] = useState('')
   const [price, setPrice] = useState(0)
+  const [file, setFile] = useState(null)
+  //const [image, setImage] = useState(null)
   const [details, setDetails] = useState('')
   
   const product= {
@@ -17,12 +19,27 @@ const UploadProduct = () => {
     collectionName: productCollection,
     price: price,
     details: details,
-    images: ['asdfg']
+    images: file[0]
   }
 
+  //const readFile = (file) => {
+    //const reader = new FileReader()
+    
+    //reader.onload = (e) => setImage(e.target.result)
+    //reader.onload = (e) => console.log(e.target.result)
+    
+    //reader.readAsDataURL(file)
+  //}
+
+  const handleChange = (e) => {
+    //console.dir(e.target.files[0])
+    //readFile(e.target.files[0])
+    setFile(e.target.files)
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('product', product)
       try {
         const dataProduct = await axios.post(`http://localhost:8081/api/products`, product,
         {
@@ -64,6 +81,8 @@ const UploadProduct = () => {
               </select>
               <label htmlFor="price">Precio</label>
               <input id="price" type="price" name="price" onChange={(e) => setPrice(e.target.value)} value={price} />
+              <label htmlFor="file">Imágenes</label>
+              <input ide="file" type="file" accept="image/*" multiple name="file" onChange={handleChange} />
               <label htmlFor="details">Descripción</label>
               <input id="details" type="details" name="details" onChange={(e) => setDetails(e.target.value)} value={details} />
               <button>Publicar producto</button>

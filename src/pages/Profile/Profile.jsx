@@ -24,7 +24,7 @@ const Profile = () => {
           localStorage.setItem('token', data.token)
           localStorage.setItem('isAdmin', data.isAdmin)
           localStorage.setItem('name', data.name)
-          navigate('/')
+          navigate('/profile')
         }
       } catch (error) {
           console.error(error)
@@ -33,7 +33,7 @@ const Profile = () => {
 
   const handleLogout = () => {
     localStorage.clear()
-    navigate('/')
+    navigate('/profile')
   }
   return (
     <div className='Profile-container'>
@@ -60,13 +60,13 @@ const Profile = () => {
               <div className='manageEcommerce-container'>
                 <div className='manageShop-container'>
                   <div className='ManageEcommerceImg-container'>
-                    <img src='shop.png' alt='' />
+                    <img src='./shop.png' alt='' />
                   </div>
                   <button className='manageShopButton' onClick={()=> navigate('/admin/manageProducts')}>⚙️ Tienda</button>
                 </div>
                 <div className='manageBlog-container'>
                   <div className='ManageEcommerceImg-container'>
-                    <img src='blogconfig.png' alt='' />
+                    <img src='./blogconfig.png' alt='' />
                   </div>
                   <button className='manageBlogButton' onClick={()=> navigate('/admin/manageBlog')}>⚙️ Blog</button>
                 </div>
@@ -78,10 +78,26 @@ const Profile = () => {
             :
             (<>
               <h1 className='animate__animated animate__fadeInLeft'>Bienvenido(a) {localStorage.getItem('name')}</h1>
+              <div className='manageClient-container'>
+                <div className='buyProducts-container'>
+                  <div className='manageClientImg-container'>
+                    <img src='buyproducts.png' alt='' />
+                  </div>
+                  <button className='buyProductsButton' onClick={()=> navigate('/')}>🛒 Tienda</button>
+                </div>
+                <div className='manageProfile-container'>
+                  <div className='manageClientImg-container'>
+                    <img src='clientprofile.png' alt='' />
+                  </div>
+                  <button className='manageProfileButton' onClick={()=> navigate('*')}>👽 Perfil</button>
+                </div>
+              </div>
             </>)
           }
         </div>
-        <button className='logoutButton-container' onClick={handleLogout}>Cerrar sesión</button>
+        <div className='logoutButton-container'>
+          <button className='logoutButton' onClick={handleLogout}>⬅️ Cerrar sesión</button>
+        </div>
       </>
       }
     </div>

@@ -14,13 +14,13 @@ const ManageProducts = () => {
             <div className='ManageProductsOptions-container'>
               <div className='newProduct-container'>
                 <div className='ManageProductsOptionsImg-container'>
-                  <img src='newproduct.png' alt='' />
+                  <img src='./newproduct.png' alt='' />
                 </div>
                 <button className='uploadProduct-Button' onClick={()=> navigate('/admin/manageProducts/uploadProduct')}>Publicar un nuevo producto</button>
               </div>
               <div className='updateProduct-container'>
                 <div className='ManageProductsOptionsImg-container'>
-                  <img src='updateproduct.png' alt='' />
+                  <img src='./updateproduct.png' alt='' />
                 </div>
                 <button className='updateProduct-Button' onClick={()=> navigate('/admin/manageProducts/updateProduct')}>Actualizar un producto</button>
               </div>

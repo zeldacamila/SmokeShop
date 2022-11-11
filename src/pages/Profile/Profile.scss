@@ -12,7 +12,7 @@
   }
 }
 
-.manageEcommerce-container {
+.manageEcommerce-container, .manageClient-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -36,7 +36,7 @@
   margin-bottom: 80px;
 }
 
-.manageShop-container, .manageBlog-container {
+.manageShop-container, .manageBlog-container, .buyProducts-container, .manageProfile-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -50,7 +50,7 @@
   border-radius: 3px;
   background-color: rgb(236, 236, 236);
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  .ManageEcommerceImg-container {
+  .ManageEcommerceImg-container, .manageClientImg-container {
     width: 250px;
     height: 250px;
     display: flex;
@@ -65,7 +65,7 @@
 }
 
 
-.manageShopButton, .manageBlogButton {
+.manageShopButton, .manageBlogButton, .buyProductsButton, .manageProfileButton, .logoutButton {
   background-color: #81b852;
   border: 2px solid #177333;
   border-radius: 4px;
@@ -89,4 +89,30 @@
 .manageBlogButton:hover {
   box-shadow: 1px 1px #177333, 2px 2px #177333, 3px 3px #177333;
   transform: translateX(-3px);
+}
+.buyProductsButton:hover {
+  box-shadow: 1px 1px #177333, 2px 2px #177333, 3px 3px #177333;
+  transform: translateX(-3px);
+}
+.manageProfileButton:hover {
+  box-shadow: 1px 1px #177333, 2px 2px #177333, 3px 3px #177333;
+  transform: translateX(-3px);
+}
+
+.logoutButton:hover {
+  box-shadow: 1px 1px #177333, 2px 2px #177333, 3px 3px #177333;
+  transform: translateX(-3px);
+}
+
+
+.logoutButton-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 60px;
 }

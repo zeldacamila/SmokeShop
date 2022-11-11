@@ -12,33 +12,55 @@ const UploadPublication = () => {
   const [datemonth, setDateMonth] = useState('')
   const [dateyear, setDateYear] = useState('')
   const [author, setAuthor] = useState('')
+  const [file, setFile] = useState(null)
+  const [image, setImage] = useState(null)
   const [content, setContent] = useState('')
   
-  const publication= {
+ /*  const publication= {
     title: postTitle,
     date: `${dateyear}-${datemonth}-${dateday}`,
     body: content,
-    image: 'asdfg',
+    image: file,
     author: author
   }
+ */
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('file', file)
+    const publication = new FormData()
+    publication.append('title', postTitle)
+    publication.append('date', `${dateyear}-${datemonth}-${dateday}`)
+    publication.append('body', content)
+    publication.append('image', file[0])
+    publication.append('author', author)
+    console.log('publication', publication)
       try {
         const dataPublication = await axios.post(`http://localhost:8081/api/publications`, publication,
         {
           headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+              "Content-Type": "multipart/form-data"
           },
         } )
-        console.log('dataPublication', dataPublication.data)
+        console.log('dataPublication', dataPublication)
         if (dataPublication) {
           navigate('/admin/manageBlog')
         }
       } catch (error) {
           console.error(error)
         }
+  }
+
+  const readFile = (file) => {
+    const reader = new FileReader()
+    reader.onload = (e) => console.log(e.target.result)
+    reader.readAsDataURL(file)
+  }
+  
+  const handleChange = (e) => {
+    setFile(e.target.files)
   }
 
   return (
@@ -140,6 +162,8 @@ const UploadPublication = () => {
               </select>
               <label htmlFor="author">Autor</label>
               <input id="author" type="author" name="author" onChange={(e) => setAuthor(e.target.value)} value={author} />
+              <label htmlFor="file">Portada</label>
+              <input id="file" type="file" accept="image/*" name="file" onChange={handleChange} />
               <label htmlFor="body">Contenido</label>
               <input id="content" type="content" name="content" onChange={(e) => setContent(e.target.value)} value={content} />
               <button>Publicar</button>
