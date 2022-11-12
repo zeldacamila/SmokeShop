@@ -14,14 +14,14 @@ const UploadProduct = () => {
   //const [image, setImage] = useState(null)
   const [details, setDetails] = useState('')
   
-  const product= {
+/*   const product= {
     name: productName,
     collectionName: productCollection,
     price: price,
     details: details,
     images: file[0]
   }
-
+ */
   //const readFile = (file) => {
     //const reader = new FileReader()
     
@@ -39,12 +39,20 @@ const UploadProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('product', product)
+
+    const product = new FormData()
+    product.append('name', productName)
+    product.append('collectionName', productCollection)
+    product.append('price', price)
+    product.append('details', details)
+    product.append('image', file[0])
+    
       try {
         const dataProduct = await axios.post(`http://localhost:8081/api/products`, product,
         {
           headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+              "Content-Type": "multipart/form-data"
           },
         } )
         console.log('dataProduct', dataProduct.data)
@@ -81,8 +89,8 @@ const UploadProduct = () => {
               </select>
               <label htmlFor="price">Precio</label>
               <input id="price" type="price" name="price" onChange={(e) => setPrice(e.target.value)} value={price} />
-              <label htmlFor="file">Imágenes</label>
-              <input ide="file" type="file" accept="image/*" multiple name="file" onChange={handleChange} />
+              <label htmlFor="file">Foto</label>
+              <input ide="file" type="file" accept="image/*" name="file" onChange={handleChange} />
               <label htmlFor="details">Descripción</label>
               <input id="details" type="details" name="details" onChange={(e) => setDetails(e.target.value)} value={details} />
               <button>Publicar producto</button>

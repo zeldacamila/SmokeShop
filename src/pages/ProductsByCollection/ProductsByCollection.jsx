@@ -37,8 +37,7 @@ const ProductsByCollection = () => {
         {loading ? <Spiner /> : (products.map((item) => {
           return(
             <ProductCard
-              productImage1={item.productImage1}
-              productImage2={item.productImage2}
+              productImage={item.image}
               collectionName={item.collectionName}
               productName={item.name}
               productPrice={item.price} />

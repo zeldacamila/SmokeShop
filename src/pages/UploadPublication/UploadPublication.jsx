@@ -28,14 +28,14 @@ const UploadPublication = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('file', file)
+
     const publication = new FormData()
     publication.append('title', postTitle)
     publication.append('date', `${dateyear}-${datemonth}-${dateday}`)
     publication.append('body', content)
     publication.append('image', file[0])
     publication.append('author', author)
-    console.log('publication', publication)
+
       try {
         const dataPublication = await axios.post(`http://localhost:8081/api/publications`, publication,
         {
