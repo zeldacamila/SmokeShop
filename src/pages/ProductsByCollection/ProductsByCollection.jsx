@@ -11,19 +11,15 @@ const ProductsByCollection = () => {
   let collection = useParams();
   const [loading, setLoading] = useState(false);
 
-  console.log('collection de params:', collection.collection)
-
   useEffect(() => {
     setLoading(true)
     axios.get(`http://localhost:8081/api/products`
     ).then((res) => {
       const allProducts = res.data.data
-      console.log('allproducts:', allProducts)
     
       const productsByCollection = allProducts.filter(function (item) {
         return item.collectionName === collection.collection
       })
-      console.log('productsByCollection', productsByCollection)
       
       setProducts(productsByCollection)
     }).catch((err) => {

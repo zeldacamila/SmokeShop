@@ -15,20 +15,14 @@ const PublicationCard = ({publicationImage, publicationDate, publicationName, pu
   return (
     <div className='PublicationCard-container'>
       <a href={`blog/${publicationName}`} className='linkPublication'>
-        <div className='withoutButtons-Publicationcontainer'>
           <div className='publicationCardImg-container'>
             <img className='publicationImage'src={publicationImage} alt='' />
           </div>
           <p className='publicationDate'>{day} de {monthName} de {year}</p>
           <p className='publicationName'>{publicationName}</p>
           <p className='publicationParagraph'>{publicationParagraph}</p>
-        </div>
-      </a>
-      <div className='withButtons-Publicationcontainer'>
-        <button onClick={handleClickRead} className='buttonRead'>
-          Continuar leyendo <VscChevronRight />
-        </button>
-      </div>
+          <p>Continuar leyendo <VscChevronRight /></p>
+      </a>     
     </div>
   )
 }

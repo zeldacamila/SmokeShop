@@ -19,7 +19,6 @@ const Profile = () => {
     e.preventDefault();
       try {
         const { data } = await axios.post(`http://localhost:8081/auth/signin`, user);
-        console.log('data', data)
         if (data) {
           localStorage.setItem('token', data.token)
           localStorage.setItem('isAdmin', data.isAdmin)
@@ -41,15 +40,17 @@ const Profile = () => {
       {!localStorage.getItem('token') ?
       (<>
         <h1 className='animate__animated animate__fadeInLeft'>Bienvenido</h1>
-        <form className="login-form" onSubmit={handleSubmit}>
-          <label htmlFor="email">Email</label>
-          <input id="email" type="email" name="email" onChange={(e) => setEmail(e.target.value)} value={email} />
-          <label htmlFor="password">Password</label>
-          <input id="pass" type="password" name="password" onChange={(e) => setPassword(e.target.value)} value={password} />
-          <button>Iniciar Sesión</button>
-        </form>
-        <button className='singupButton-container' onClick={()=> navigate('/signup-profile')}>Crear una cuenta</button>
-      </>)
+        <div className='loginForm-container'>
+          <form className="login-form" onSubmit={handleSubmit}>
+            <label htmlFor="email">Correo electrónico:</label>
+            <input id="email" type="email" name="email" onChange={(e) => setEmail(e.target.value)} value={email} />
+            <label htmlFor="password">Contraseña:</label>
+            <input id="pass" type="password" name="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+            <button>Iniciar Sesión</button>
+          </form>
+          <button className='singupButton-container' onClick={()=> navigate('/signup-profile')}>Crear una cuenta</button>
+        </div>
+        </>)
       : 
       <>
         

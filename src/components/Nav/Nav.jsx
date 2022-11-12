@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom'
 const Nav = () => {
 
   const navigate = useNavigate()
-  console.log(localStorage.getItem('isAdmin'))
+/* console.log(localStorage.getItem('isAdmin'))
   console.log(localStorage.getItem('name'))
-  console.log(localStorage.getItem('token'))
+  console.log(localStorage.getItem('token')) */
   return (
     <div className='Nav-container'>
       {localStorage.getItem('isAdmin') === 'true' ? 

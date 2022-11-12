@@ -14,7 +14,6 @@ const Blog = () => {
     axios.get(`http://localhost:8081/api/publications`
     ).then((res) => {
       const allPublications = res.data.data
-      console.log('allPublications:', allPublications)  
       setPublications(allPublications)
     }).catch((err) => {
       console.log(err)
