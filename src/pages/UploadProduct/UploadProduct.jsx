@@ -70,31 +70,43 @@ const UploadProduct = () => {
         {localStorage.getItem('isAdmin') === 'true' ?
           (<>
             <h1 className='animate__animated animate__fadeInLeft'>Administra tu tienda: Publica un nuevo producto</h1>
-            <form className="UploadProduct-form" onSubmit={handleSubmit}>
-              <label htmlFor="nameProduct">Nombre del producto</label>
-              <input id="nameProduct" type="nameProduct" name="nameProduct" onChange={(e) => setProductName(e.target.value)} value={productName} />
-              <label htmlFor="collectionName">Colección</label>
-              <select id="collectionName" type="collectionName" name="collectionName" onChange={(e) => setProductCollection(e.target.value)} value={productCollection} >
-                <option value="" disabled selected>Selecciona una colección</option>
-                <option value="Vapos">Vapos</option>
-                <option value="Bongs">Bongs</option>
-                <option value="Grinders">Grinders</option>
-                <option value="Candelas">Candelas</option>
-                <option value="Pa' Enrolar">Pa' Enrolar</option>
-                <option value="Pipas">Pipas</option>
-                <option value="Para tu cultivo">Para tu cultivo</option>
-                <option value="Accesorios">Accesorios</option>
-                <option value="Productos CBD">Productos CBD</option>
-                <option value="Combos">Combos</option>
-              </select>
-              <label htmlFor="price">Precio</label>
-              <input id="price" type="price" name="price" onChange={(e) => setPrice(e.target.value)} value={price} />
-              <label htmlFor="file">Foto</label>
-              <input ide="file" type="file" accept="image/*" name="file" onChange={handleChange} />
-              <label htmlFor="details">Descripción</label>
-              <input id="details" type="details" name="details" onChange={(e) => setDetails(e.target.value)} value={details} />
-              <button>Publicar producto</button>
-        </form>
+            <div className='UploadProductForm-container'>
+              <form className="UploadProduct-form" onSubmit={handleSubmit}>
+                <div>
+                <label htmlFor="nameProduct">Nombre del producto:</label>
+                <input id="nameProduct" type="nameProduct" name="nameProduct" onChange={(e) => setProductName(e.target.value)} value={productName} />
+                </div>
+                <div>
+                <label htmlFor="collectionName">Colección:</label>
+                <select id="collectionName" type="collectionName" name="collectionName" onChange={(e) => setProductCollection(e.target.value)} value={productCollection} >
+                  <option value="" disabled selected>Selecciona una colección</option>
+                  <option value="Vapos">Vapos</option>
+                  <option value="Bongs">Bongs</option>
+                  <option value="Grinders">Grinders</option>
+                  <option value="Candelas">Candelas</option>
+                  <option value="Pa' Enrolar">Pa' Enrolar</option>
+                  <option value="Pipas">Pipas</option>
+                  <option value="Para tu cultivo">Para tu cultivo</option>
+                  <option value="Accesorios">Accesorios</option>
+                  <option value="Productos CBD">Productos CBD</option>
+                  <option value="Combos">Combos</option>
+                </select>
+                </div>
+                <div>
+                <label htmlFor="price">Precio:</label>
+                <input id="price" type="price" name="price" onChange={(e) => setPrice(e.target.value)} value={price} />
+                </div>
+                <div>
+                <label htmlFor="file">Foto:</label>
+                <input id="file" type="file" accept="image/*" name="file" onChange={handleChange} />
+                </div>
+                <div>
+                <label htmlFor="details">Descripción:</label>
+                <input id="details" type="details" name="details" onChange={(e) => setDetails(e.target.value)} value={details} />
+                </div>
+                <button>Publicar producto</button>
+              </form>
+              </div>
           </>)
           :
           (navigate('*'))

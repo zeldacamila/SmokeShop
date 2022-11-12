@@ -11,3 +11,14 @@
   0 0 82px #81b852,
   }
 }
+
+.CartWithProducts-container {
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 20px
+}

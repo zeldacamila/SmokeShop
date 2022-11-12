@@ -20,7 +20,6 @@ const ProductsByCollection = () => {
       const productsByCollection = allProducts.filter(function (item) {
         return item.collectionName === collection.collection
       })
-      
       setProducts(productsByCollection)
     }).catch((err) => {
       console.log(err)

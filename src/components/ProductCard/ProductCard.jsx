@@ -1,9 +1,28 @@
 import React from 'react'
+import { useContext, useState } from "react";
+import { CartContext } from "../../store/productContext";
+import axios from 'axios';
+
 
 const ProductCard = ({productImage, collectionName, productName, productPrice}) => {
 
-  const handleClickAddtoCart = () => {
+  const { addProduct } = useContext(CartContext)
 
+  const handleClickAddtoCart = () => {
+    console.log('productName', productName)
+    axios.get(`http://localhost:8081/api/products`
+    ).then((res) => {
+      const allProducts = res.data.data
+      console.log('allProducts', allProducts)
+      const productByName = allProducts.filter(function (item) {
+        return item.name === productName
+      })
+      console.log('productByName', productByName[0])
+      addProduct(productByName[0])
+    }).catch((err) => {
+      console.log(err)
+    }).finally(() => {
+    })
   }
 
   return (
@@ -13,7 +32,7 @@ const ProductCard = ({productImage, collectionName, productName, productPrice}) 
             <img className='firstImage' src={productImage} alt='' />
           </div>
           <p className='productName'>{productName}</p>
-          <p className='productPrice'>COP${productPrice}</p>
+          <p className='productPrice'>COP$ {productPrice}</p>
       </a>
       <button onClick={handleClickAddtoCart} className='buttonAddtoCart'>
           Agregar al carrito

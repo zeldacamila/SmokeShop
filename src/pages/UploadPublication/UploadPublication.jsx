@@ -71,8 +71,11 @@ const UploadPublication = () => {
             <h1 className='animate__animated animate__fadeInLeft'>Administra el CannaBlog: Publica una nueva noticia</h1>
             <div className='UploadPubForm-container'>
               <form className="UploadPublication-form" onSubmit={handleSubmit}>
+                <div>
                 <label htmlFor="postTitle">Título del post:</label>
                 <input id="postTitle" type="postTitle" name="postTitle" onChange={(e) => setPostTitle(e.target.value)} value={postTitle} />
+                </div>
+                <div>
                 <label htmlFor="dateday">Día:</label>
                 <select id="dateday" type="dateday" name="dateday" onChange={(e) => setDateDay(e.target.value)} value={dateday} >
                   <option value="" disabled selected>--</option>
@@ -108,6 +111,8 @@ const UploadPublication = () => {
                   <option value="30">30</option>
                   <option value="31">31</option>
                 </select>
+                </div>
+                <div>
                 <label htmlFor="datemonth">Mes:</label>
                 <select id="datemonth" type="datemonth" name="datemonth" onChange={(e) => setDateMonth(e.target.value)} value={datemonth} >
                   <option value="" disabled selected>--</option>
@@ -124,6 +129,8 @@ const UploadPublication = () => {
                   <option value="11">11</option>
                   <option value="12">12</option>
                 </select>
+                </div>
+                <div>
                 <label htmlFor="dateyear">Año:</label>
                 <select id="dateyear" type="dateyear" name="dateyear" onChange={(e) => setDateYear(e.target.value)} value={dateyear} >
                   <option value="" disabled selected>--</option>
@@ -161,12 +168,19 @@ const UploadPublication = () => {
                   <option value="2021">2021</option>
                   <option value="2022">2022</option>
                 </select>
+                </div>
+                <div>
                 <label id="authorlabel" htmlFor="author">Autor:</label>
                 <input id="author" type="author" name="author" onChange={(e) => setAuthor(e.target.value)} value={author} />
+                </div>
+                <div>
                 <label htmlFor="file">Portada:</label>
                 <input id="file" type="file" accept="image/*" name="file" onChange={handleChange} />
+                </div>
+                <div>
                 <label htmlFor="body">Contenido:</label>
                 <input id="content" type="content" name="content" onChange={(e) => setContent(e.target.value)} value={content} />
+                </div>
                 <button>Publicar</button>
               </form>
             </div>
