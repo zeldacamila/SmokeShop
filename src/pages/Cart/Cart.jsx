@@ -17,7 +17,7 @@ const Cart = () => {
     navigate('/cart')
   }
 
-  const handleGoToCart = () => {
+  const handleGoToShop = () => {
     navigate('/')
   }
 
@@ -42,7 +42,7 @@ const Cart = () => {
         }
       </div>
       <div>
-        <button onClick={handleGoToCart} className='buttonCleanCart'>🛒 Seguir comprando</button>
+        <button onClick={handleGoToShop} className='buttonCleanCart'>🛒 Seguir comprando</button>
         <button onClick={handleClickCleanCart} className='buttonCleanCart'>Vaciar carrito</button>
         <button onClick={handlePay} className='buttonCleanCart'>Pagar</button>
       </div>

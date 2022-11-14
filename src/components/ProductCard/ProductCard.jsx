@@ -2,11 +2,18 @@ import React from 'react'
 import { useContext, useState } from "react";
 import { CartContext } from "../../store/productContext";
 import axios from 'axios';
-
+import { message } from 'antd'
 
 const ProductCard = ({productImage, collectionName, productName, productPrice}) => {
 
   const { addProduct } = useContext(CartContext)
+
+  const openMessage = () => {
+    message.info({
+      content: '¡Producto agregado!',
+      duration: 3,
+    })
+  }
 
   const handleClickAddtoCart = () => {
     console.log('productName', productName)
@@ -32,6 +39,7 @@ const ProductCard = ({productImage, collectionName, productName, productPrice}) 
     }).catch((err) => {
       console.log(err)
     }).finally(() => {
+      openMessage()
     })
   }
 

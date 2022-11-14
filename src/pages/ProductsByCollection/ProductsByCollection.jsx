@@ -4,8 +4,11 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Spiner } from '../../components/Spiner/Spiner'
+import { useNavigate } from 'react-router-dom'
 
 const ProductsByCollection = () => {
+
+  const navigate = useNavigate()
 
   const [products, setProducts] = useState([])
   let collection = useParams();
@@ -28,6 +31,10 @@ const ProductsByCollection = () => {
     })
   }, [])
 
+  const handleGoToCategory = () => {
+    navigate('/')
+  }
+
   return (
     <div className='productsByCollection-container'>
       <p className='advertising'>Envíos gratis por compras superiores a 200.000 COP</p>
@@ -41,6 +48,9 @@ const ProductsByCollection = () => {
               productName={item.name}
               productPrice={item.price} />
           )}))}
+        <button onClick={handleGoToCategory} className='buttonAddtoCart'>
+          Volver a Categorías
+        </button>
       </div>
     </div>
   )
