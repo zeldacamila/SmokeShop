@@ -2,6 +2,8 @@ import React from 'react'
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios"
+import { message } from 'antd'
+import { Spiner2 } from '../../components/Spiner/Spiner2'
 
 const UploadProduct = () => {
 
@@ -13,7 +15,8 @@ const UploadProduct = () => {
   const [file, setFile] = useState(null)
   //const [image, setImage] = useState(null)
   const [details, setDetails] = useState('')
-  
+  const [loading, setLoading] = useState(false)
+
 /*   const product= {
     name: productName,
     collectionName: productCollection,
@@ -31,6 +34,13 @@ const UploadProduct = () => {
     //reader.readAsDataURL(file)
   //}
 
+  const openMessage = () => {
+    message.info({
+      content: '¡Producto publicado exitosamente!',
+      duration: 3,
+    })
+  }
+
   const handleChange = (e) => {
     //console.dir(e.target.files[0])
     //readFile(e.target.files[0])
@@ -39,7 +49,7 @@ const UploadProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     const product = new FormData()
     product.append('name', productName)
     product.append('collectionName', productCollection)
@@ -48,26 +58,30 @@ const UploadProduct = () => {
     product.append('image', file[0])
     
       try {
+        setLoading(true)
+        console.log('loading', loading)
         const dataProduct = await axios.post(`http://localhost:8081/api/products`, product,
         {
           headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
               "Content-Type": "multipart/form-data"
           },
-        } )
+        })
         console.log('dataProduct', dataProduct.data)
+        console.log('loading', loading)
         if (dataProduct) {
           navigate('/admin/manageProducts')
         }
       } catch (error) {
           console.error(error)
         }
+        openMessage()
   }
-
+  
   return (
     <div className='UploadProduct-container'>
       <p className='advertising'>Envíos gratis por compras superiores a 200.000 COP</p>
-        {localStorage.getItem('isAdmin') === 'true' ?
+      {loading ? <Spiner2 /> : (localStorage.getItem('isAdmin') === 'true' ?
           (<>
             <h1 className='animate__animated animate__fadeInLeft'>Administra tu tienda: Publica un nuevo producto</h1>
             <div className='UploadProductForm-container'>
@@ -110,7 +124,7 @@ const UploadProduct = () => {
           </>)
           :
           (navigate('*'))
-        }
+  )}
     </div>
   )
 }

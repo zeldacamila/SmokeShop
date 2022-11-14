@@ -19,6 +19,16 @@ const ProductCard = ({productImage, collectionName, productName, productPrice}) 
       })
       console.log('productByName', productByName[0])
       addProduct(productByName[0])
+      if (localStorage.getItem("ProductsCart") === null) {
+        localStorage.setItem("ProductsCart",JSON.stringify([]))
+      }
+      localStorage.setItem('products', productByName[0])
+      let products = [localStorage.getItem("ProductsCart")]
+      products = JSON.parse(products)
+        const objProduct = {productImage,productPrice,productName}
+        console.log('objProduct',objProduct)
+        products.push(objProduct)
+        localStorage.setItem("ProductsCart",JSON.stringify(products));
     }).catch((err) => {
       console.log(err)
     }).finally(() => {
@@ -32,7 +42,7 @@ const ProductCard = ({productImage, collectionName, productName, productPrice}) 
             <img className='firstImage' src={productImage} alt='' />
           </div>
           <p className='productName'>{productName}</p>
-          <p className='productPrice'>COP$ {productPrice}</p>
+          <p className='productPrice'>COP ${productPrice}</p>
       </a>
       <button onClick={handleClickAddtoCart} className='buttonAddtoCart'>
           Agregar al carrito

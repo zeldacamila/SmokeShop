@@ -9,7 +9,7 @@ const ProductInCartCard = ({productImage, productName, productPrice}) => {
       </div>
       <div className='productInCartCardInfo-container'>
         <p className='productInCartName'>{productName}</p>
-        <p className='productInCartPrice'>{productPrice}</p>
+        <p className='productInCartPrice'>COP ${productPrice}</p>
       </div>
     </div>
   )

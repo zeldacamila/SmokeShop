@@ -2,6 +2,8 @@ import React from 'react'
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios"
+import { message } from 'antd'
+import { Spiner2 } from '../../components/Spiner/Spiner2'
 
 const UploadPublication = () => {
 
@@ -15,6 +17,7 @@ const UploadPublication = () => {
   const [file, setFile] = useState(null)
   const [image, setImage] = useState(null)
   const [content, setContent] = useState('')
+  const [loading, setLoading] = useState(false)
   
  /*  const publication= {
     title: postTitle,
@@ -25,6 +28,12 @@ const UploadPublication = () => {
   }
  */
 
+  const openMessage = () => {
+    message.info({
+      content: '¡Post publicado exitosamente!',
+      duration: 3,
+    })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,6 +46,8 @@ const UploadPublication = () => {
     publication.append('author', author)
 
       try {
+        setLoading(true)
+        console.log('loading', loading)
         const dataPublication = await axios.post(`http://localhost:8081/api/publications`, publication,
         {
           headers: {
@@ -51,6 +62,7 @@ const UploadPublication = () => {
       } catch (error) {
           console.error(error)
         }
+      openMessage()
   }
 
   const readFile = (file) => {
@@ -66,7 +78,7 @@ const UploadPublication = () => {
   return (
     <div className='UploadPublication-container'>
       <p className='advertising'>Envíos gratis por compras superiores a 200.000 COP</p>
-        {localStorage.getItem('isAdmin') === 'true' ?
+        {loading ? <Spiner2 /> : (localStorage.getItem('isAdmin') === 'true' ?
           (<>
             <h1 className='animate__animated animate__fadeInLeft'>Administra el CannaBlog: Publica una nueva noticia</h1>
             <div className='UploadPubForm-container'>
@@ -188,7 +200,7 @@ const UploadPublication = () => {
           </>)
           :
           (navigate('*'))
-        }
+        )}
     </div>
   )
 }
