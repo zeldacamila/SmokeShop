@@ -16,7 +16,7 @@ const ProductsByCollection = () => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get(`http://localhost:8081/api/products`
+    axios.get(`https://smokeshop-cannadev.herokuapp.com/api/products`
     ).then((res) => {
       const allProducts = res.data.data
     
