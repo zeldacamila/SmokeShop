@@ -1,15 +1,15 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { store } from '../../redux-store/indexRedux'
 
 const Nav = () => {
-  
-  const storeState = store.getState()
+
   const navigate = useNavigate()
-  console.log(storeState)
+/* console.log(localStorage.getItem('isAdmin'))
+  console.log(localStorage.getItem('name'))
+  console.log(localStorage.getItem('token')) */
   return (
     <div className='Nav-container'>
-      {storeState.userReducer.isAdmin ? 
+      {localStorage.getItem('isAdmin') === 'true' ? 
         <div className='empty'>
           <p>Administrador</p>
         </div>

@@ -7,6 +7,11 @@ import ProductsByCollection from './pages/ProductsByCollection/ProductsByCollect
 import Blog from './pages/Blog/Blog';
 import Profile from './pages/Profile/Profile';
 import Cart from './pages/Cart/Cart';
+import SignUp from './pages/SignUp/Signup';
+import ManageBlog from './pages/ManageBlog/ManageBlog';
+import ManageProducts from './pages/ManageProducts/ManageProducts';
+import UploadPublication from './pages/UploadPublication/UploadPublication';
+import UploadProduct from './pages/UploadProduct/UploadProduct';
 
 function App() {
   return (
@@ -18,6 +23,11 @@ function App() {
         <Route path="/collections/:collection" element={<ProductsByCollection />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/signup-profile" element={<SignUp />} />
+        <Route path="/admin/manageProducts" element={<ManageProducts />} />
+        <Route path="/admin/manageProducts/uploadProduct" element={<UploadProduct />} />
+        <Route path="/admin/manageBlog" element={<ManageBlog />} />
+        <Route path="/admin/manageBlog/uploadPublication" element={<UploadPublication />} />
         <Route path="/cart" element={<Cart />} />
         {/*<Route path="/products/:productTitle" element={<ProductDetail />} />*/}
       </Routes>

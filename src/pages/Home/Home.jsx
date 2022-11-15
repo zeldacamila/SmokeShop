@@ -15,7 +15,6 @@ const Home = () => {
   const handleYes = () => {
     cookies.set('modal', 'yes', {options: {path: '/', maxAge:60*60*24*30}})
   }
-  console.log(cookies.get('modal'))
   const handleOk = ({okButtonProps}) => {
     
     if (modalText === 'Lo sentimos, no puedes acceder a nuestro contenido si no eres mayor de edad.') {
