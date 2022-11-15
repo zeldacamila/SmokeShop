@@ -25,8 +25,8 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
       try {
-        const { data } = await axios.post(`http://localhost:8081/auth/signup`, user);
-        const datalogin = await axios.post(`http://localhost:8081/auth/signin`, user2 )
+        const { data } = await axios.post(`https://smokeshop-cannadev.herokuapp.com/auth/signup`, user);
+        const datalogin = await axios.post(`https://smokeshop-cannadev.herokuapp.com/auth/signin`, user2 )
         if (datalogin) {
           localStorage.setItem('token', datalogin.data.token)
           localStorage.setItem('isAdmin', datalogin.data.isAdmin)

@@ -31,7 +31,7 @@ const handlePay = (amount) => {
     extra1: "extra1",
     extra2: "extra2",
     extra3: "extra3",
-    response: "http://localhost:3000",
+    response: "https://smokeshop.vercel.app/",
 
     //Atributos cliente
     name_billing: "Jhon Doe",

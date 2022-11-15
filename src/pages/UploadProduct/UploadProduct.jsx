@@ -60,7 +60,7 @@ const UploadProduct = () => {
       try {
         setLoading(true)
         console.log('loading', loading)
-        const dataProduct = await axios.post(`http://localhost:8081/api/products`, product,
+        const dataProduct = await axios.post(`https://smokeshop-cannadev.herokuapp.com/api/products`, product,
         {
           headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
