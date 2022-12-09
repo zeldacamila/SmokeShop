@@ -17,7 +17,7 @@ const ProductCard = ({productImage, collectionName, productName, productPrice}) 
 
   const handleClickAddtoCart = () => {
     console.log('productName', productName)
-    axios.get(`https://smokeshop-cannadev.herokuapp.com/api/products`
+    axios.get(`https://smokeshop-backend.onrender.com/api/products`
     ).then((res) => {
       const allProducts = res.data.data
       console.log('allProducts', allProducts)
