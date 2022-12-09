@@ -11,7 +11,7 @@ const Blog = () => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get(`https://smokeshop-cannadev.herokuapp.com/api/publications`
+    axios.get(`https://smokeshop-backend.onrender.com/api/publications`
     ).then((res) => {
       const allPublications = res.data.data
       setPublications(allPublications)
