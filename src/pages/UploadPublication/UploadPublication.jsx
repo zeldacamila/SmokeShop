@@ -48,7 +48,7 @@ const UploadPublication = () => {
       try {
         setLoading(true)
         console.log('loading', loading)
-        const dataPublication = await axios.post(`https://smokeshop-cannadev.herokuapp.com/api/publications`, publication,
+        const dataPublication = await axios.post(`https://smokeshop-backend.onrender.com/api/publications`, publication,
         {
           headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
